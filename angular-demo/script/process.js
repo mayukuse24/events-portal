@@ -80,6 +80,24 @@ a.controller('Bc',
 		    }
 		}
 	    }
+
+	    function listEventsHere(x){
+		var venue = x;
+		var event_detail = [];
+		var len = data.length;
+		for( var i = 0; i < len; i++ ){
+		    if(data[i].eventlocation == venue){
+
+			event_detail.push(
+				{
+				    info: data[i].eventname,
+				    when: data[i].starttime
+				}
+				);
+		    }
+		}
+		console.log(event_detail);
+	    }
 	    
 	    data.sort(compare);
 	    for( var iter = 0; iter < data.length; iter++ ){
@@ -94,6 +112,5 @@ a.controller('Bc',
 			    });
 			}
 	    }
-	    console.log(scope.aa);
 	}
 ]);

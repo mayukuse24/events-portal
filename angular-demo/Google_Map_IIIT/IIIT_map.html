@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+          <script src="../src/angular.min.js"></script>
+    <script src="../objectfiles/object.js"></script>
+    <script src="../script/process.js"></script>
+<!-- <script src="../src/bootstrap.min.js" ></script> -->
+  <!-- <link rel="stylesheet" href="../src/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="../src/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Julius+Sans+One">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster+Two">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Indie Flower">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Monoton">
+
+    <title>Events-Portal</title>
+  </head>
+   <body>
+         
+        <div ng-app="B" class="info">
+      <h4> List </h4>
+      <ul ng-controller="Bc">
+          <li ng-repeat="item in aa">
+        <p>
+            {{item.bb}}
+            &nbsp;&nbsp;&nbsp;
+            {{item.cc}}
+            &nbsp;&nbsp;&nbsp;
+            {{item.dd}}
+            &nbsp;&nbsp;&nbsp;
+            {{item.ee}}
+            &nbsp;&nbsp;&nbsp;
+            {{item.ff}}
+            &nbsp;&nbsp;&nbsp;
+        </p>
+          </li>
+      </ul>
+        </div>
+    <div id="container">  
+      <header class="header-img">
+  <div class="symbol-design">
+    <h1>EP</h1>
+    <!-- <a href="Lesson2.html"> -->
+        <!-- <h3>ADD EVENTS</h3> -->
+    <!-- </a> -->
+  </div>
+  <a href="IIIT_map.html"><h2>Events Portal</h2></a>
+      </header>
+      
+      <div id="content">
+
+        <div id="map-canvas"/>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

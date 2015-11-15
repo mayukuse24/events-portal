@@ -1,11 +1,6 @@
-//
-// Gachibowli
-// Hyderabad, Telangana
-// 17.446118, 78.348741
-// 
 var map;
 var infoWindow;
-
+var flag;
 // var Nilgiri_list = function call here ()
 var Nilgiri_list = ['Quiz','Debate']
 
@@ -15,6 +10,24 @@ var markersData = [
       lng: 78.348785,
       name: "Nilgiri",
       data: Nilgiri_list
+   },
+   {
+      lat: 17.445649, 
+      lng: 78.349117,
+      name: "Himalaya"
+      // data: Himalaya_list
+   },
+   {
+      lat: 17.446057,
+      lng: 78.346430,
+      name: "Felicity Ground"
+      // data: Nilgiri_list
+   },
+   {
+      lat: 17.445840, 
+      lng: 78.349268,
+      name: "Vindhya"
+      // data: Nilgiri_list
    } 
 ];
 
@@ -62,6 +75,7 @@ function displayMarkers(){
    map.fitBounds(bounds);
 }
 
+
 function createMarker(latlng, name, data_map){
    var marker = new google.maps.Marker({
       map: map,
@@ -73,7 +87,7 @@ function createMarker(latlng, name, data_map){
    });
 
    google.maps.event.addListener(marker, 'click', function() {
-      var flag = 1;
+      flag=1;
       var iwContent = '<div class="mylabel">' + name + "</br>"+ data_map + 
          '</div>';
       
@@ -83,6 +97,7 @@ function createMarker(latlng, name, data_map){
    });
 
    google.maps.event.addListener(infoWindow,'closeclick',function() {
+      flag=0;
         marker.setAnimation(google.maps.Animation.DROP);
     });
 }

@@ -39,28 +39,28 @@
 
 <table>
 <tr>
-<td style="width:70vw">
+<td style="width:75vw">
 <div id="map-canvas"/>
 </td>
-<td style="width:30vw">
+<td style="width:25vw">
     
         <div ng-app="B" class="info" style="color:white">
-      <h4 style="text-align: center"> Upcoming Events </h4><hr /><br />
+      <h4> List </h4>
       <ul ng-controller="Bc">
           <li ng-repeat="item in aa">
-            <strong>{{item.bb}}</strong>
-            <br/>
-            <em>Venue</em>: &nbsp;
+        <p>
+            {{item.bb}}
+            &nbsp;&nbsp;&nbsp;
 
             {{item.cc}}
             &nbsp;&nbsp;&nbsp;
             {{item.dd}}
-            <br />
-            <em> Time </em>: &nbsp;
+            &nbsp;&nbsp;&nbsp;
             {{item.ee}}
             &nbsp;&nbsp;&nbsp;
             {{item.ff}}
-            <hr />
+            &nbsp;&nbsp;&nbsp;
+</br>
 </br>
         </p>
           </li>

@@ -36,7 +36,7 @@ if(isset($_POST["total_events"]))
 	$str = $str."]";
 
 	//echo $str;
-	$fpointer = fopen("event_data.js",'w') or die("File didnt open");
+	$fpointer = fopen("/var/www/html/angular-demo/objectfiles/object.js",'w') or die("File didnt open");
 
 	fwrite($fpointer, $str);
 }
@@ -73,13 +73,76 @@ if(isset($_POST["search"]))
 
 mysql_close($conn);
 ?>
+<style>
 
+h3 {
+    color: #eee;
+    font-family: Verdana;
+}
+
+.header-img{
+    position: relative;
+    text-align: center;
+    background-color: #FFF;
+    height: 5em;
+    /*box-shadow: 10px 10px 15px #888888;*/
+}
+#map-canvas
+{
+    width:70vw;
+    height:80vh;
+    padding-left: 1em;
+}
+
+
+.symbol-design{
+    float:left;
+    overflow: hidden;
+    color: #fff;
+    background-color: #000;
+    height: 5em;
+}
+
+.symbol-design h1{
+    padding-top: 0.7em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-family: 'Monoton', serif;
+}
+
+.symbol-design h3{
+    padding-top: 0.7em;
+    padding-left: 2em;
+    font-family: 'Monoton', serif;
+}
+
+.header-img h2{
+    font-size: 2em;
+    letter-spacing: 2px;
+    padding-top: 0.7em;
+    color: #0A0005;
+    -webkit-transition: color 0.2s ease-out 0.2s;
+    transition: color 0.2s ease-out 0.2s;
+    -o-transition: color 0.2s ease-out 0.2s;
+    transition: color 0.2s ease-out 0.2s;
+    cursor:pointer;
+    font-family: 'Lobster', serif;
+}
+.header-img h2:hover{
+    color: #6B0024;
+}
+</style>
+<header class="header-img">
+  <div class="symbol-design">
+    <h1>EP</h1>
+  </div>
+  <a href="../IIIT_map.html"><h2>Events Portal</h2></a>
+		     </header>	
+<h3 style="color: gray"> Events to delete </h3>
 <form action="delete-record.php" method="POST">
 	Search by email: <input type="text" name="search"><br><br>
 	<input type="submit" name="submit"><br><br>
 </form>
-
-<h3> Events to delete </h3>
 
 <form action="delete-record.php" method="POST">
 	
@@ -89,6 +152,7 @@ mysql_close($conn);
 	
 	if(isset($_POST["search"]))
 	{
+            echo '<h3>Your events </h3>';
 		$len = count($matched_events);
 		if($len==0)
 		{

@@ -114,6 +114,7 @@ function createMarker(latlng, name, data_map){
 	marker.setAnimation(google.maps.Animation.DROP);
     });
 google.maps.event.addListener(map,'click',function() {
+	flag=0;
 	marker.setAnimation(google.maps.Animation.DROP);
     });
 }

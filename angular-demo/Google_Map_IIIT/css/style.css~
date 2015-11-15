@@ -255,6 +255,6 @@ a{
         /*: rgba(255,255,255,0.6);*/
         background-color : #ffb366;
       border-color: #E8DBDB;  
-    font-family:  'Julius Sans One', serif;
+          font-family: Verdana;
 
         }

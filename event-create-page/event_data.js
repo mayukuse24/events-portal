@@ -1,0 +1,1 @@
+data = [{"event_id":"6","eventname":"kalakshetra","organiser":"vikas","contact":"743838433","email":"vikas.thamizharasan@students.iiit.ac.in","starttime":"2013-02-03 14:02:00","endtime":"2015-03-02 14:00:00","eventlocation":"Vindhya","room":"Seminar Hall 1","description":"king of thamils "},]

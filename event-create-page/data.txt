@@ -1,3 +1,0 @@
-{'eventname':'vinay','startdate':'2015-12-30','starttime':'12:59','endtime':'12:59', 'enddate':'2015-12-31','eventlocation':'Vindhya','room':'Seminar Hall 2','organiser':'khandelwal','description':'sdkjfhskdjfhkjsdfh '}
-{'eventname':'rohan','startdate':'2015-12-31','starttime':'00:59','endtime':'12:59', 'enddate':'2015-12-31','eventlocation':'Vindhya','room':'workspace','organiser':'karnawat','description':'fsdfsdfsdfsdfasdfsdafsskjafhjksdahf '}
-{'eventname':'aaysuh','startdate':'2015-12-30','starttime':'22:03','endtime':'12:58', 'enddate':'2015-01-01','eventlocation':'Vindhya','room':'workspace','organiser':'naik','description':'skdjfhsdkjfhkdsjhf '}

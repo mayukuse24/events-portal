@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="utf-8">
+        <title>Events-page</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="event-form.js"> </script>
+	
+    </head>
+    <body>
+
+	    <?php echo "Hey there"
+	    $fpointer = fopen("data.txt",'w') or die("File didnt open");
+	    fwrite($fpointer,"{"eventname":"Kalakshetra - Origami","startdate":"12-12-15","starttime":"14:00","endtime":"17:00", "enddate":"12-12-15","eventlocation":"Nilgiri","room":"312","organiser":"Tanvi"}");
+	    ?>
+    <h1>Event Form</h1>
+    
+    <form action="" method="">
+      Name: <input type="text" name="event_name" required pattern="[a-zA-Z0-9 ]+"> <br> <br>
+      Event Organiser: <input type="text" name="event_organiser" required pattern="[a-zA-Z0-9 ]+"> <br> <br>
+      Contact Number: <input type="text" name="organiser_contact" required pattern="[0-9]+"> <br> <br>
+      Start date: <input type="date" name="start_date" required>
+      Start time: <input type="time" name="start_time" required><br> <br>
+      End date: <input type="date" name="end_date" required> 
+      End time: <input type="time" name="end_time" required><br> <br>
+      
+      Event Location: <select id="Parent_Location">
+	<option value="Nilgiri">Nilgiri</option>
+	<option value="Vindhya">Vindhya</option>
+	<option value="Himalaya">Himalaya</option>
+	<option value="OBH">OBH</option>
+      </select> <br><br>
+
+      Event Room: <select id="Child_Location"> </select><br> <br>
+	
+      Event Detail:<br><textarea maxlength="100" cols="50" rows="3" name="event_detail"> </textarea>
+      <input type="submit" value="submit" onClick="validate(this.form)" ><br> <br>
+    </form>
+
+    </body>
+</html>
+

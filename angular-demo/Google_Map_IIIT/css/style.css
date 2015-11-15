@@ -33,6 +33,13 @@ h3 {
     height: 5em;
     /*box-shadow: 10px 10px 15px #888888;*/
 }
+#map-canvas
+{
+    width:70vw;
+    height:80vh;
+    padding-left: 1em;
+}
+
 
 .symbol-design{
     float:left;

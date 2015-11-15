@@ -1,28 +1,20 @@
-
-// 17.447347, 78.348785
+//
+// Gachibowli
+// Hyderabad, Telangana
+// 17.446118, 78.348741
+// 
 var map;
 var infoWindow;
 
+// var Nilgiri_list = function call here ()
+var Nilgiri_list = ['Quiz','Debate']
+
 var markersData = [
    {
-      lat: 40.6386333,
-      lng: -8.745,
-      name: "hjk"
-   },
-   {
-      lat: 40.59955,
-      lng: -8.7498167,
-      name: "iop"
-   },
-   {
-      lat: 40.6247167,
-      lng: -8.7129167,
-      name: "jkl"
-   },
-   {
-      lat: 40.6247167,
-      lng: -8.7129167,
-      name: "viviv"
+      lat: 17.447347, 
+      lng: 78.348785,
+      name: "Nilgiri",
+      data: Nilgiri_list
    } 
 ];
 
@@ -34,7 +26,7 @@ var markersData = [
 
 function initialize() {
    var mapOptions = {
-      center: new google.maps.LatLng(40.601203,-8.668173),
+      center: new google.maps.LatLng(17.446118, 78.348741),
       zoom: 9,
       mapTypeId: 'roadmap',
    };
@@ -61,8 +53,8 @@ function displayMarkers(){
 
          var latlng = new google.maps.LatLng(markersData[i].lat, markersData[i].lng);   
          var name = markersData[i].name;
-
-         createMarker(latlng, name);
+         var data_map =  markersData[i].data;
+         createMarker(latlng, name, data_map);
 
          bounds.extend(latlng);  
    }
@@ -70,18 +62,19 @@ function displayMarkers(){
    map.fitBounds(bounds);
 }
 
-function createMarker(latlng, name){
+function createMarker(latlng, name, data_map){
    var marker = new google.maps.Marker({
       map: map,
       position: latlng,
       title: name,
+      tile2:  data_map,
       // icon: markerIcon,
       animation: google.maps.Animation.DROP
    });
 
    google.maps.event.addListener(marker, 'click', function() {
-      
-      var iwContent = '<div class="mylabel">' + name +
+      var flag = 1;
+      var iwContent = '<div class="mylabel">' + name + "</br>"+ data_map + 
          '</div>';
       
       infoWindow.setContent(iwContent);

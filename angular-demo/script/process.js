@@ -17,7 +17,7 @@ a.controller('Bc',
 		curM = cur.getMonth()+1;
 		curD = cur.getDate();
 		curH = cur.getHours();
-		curM = cur.getMinutes();
+		curMi = cur.getMinutes();
 		if(Number(dateSoFar[0]) < curY){
 		    return -1;
 		}
@@ -80,6 +80,7 @@ a.controller('Bc',
 		    }
 		}
 	    }
+	    
 	    data.sort(compare);
 	    for( var iter = 0; iter < data.length; iter++ ){
 		if(isDateValid(iter) == 1){
@@ -91,7 +92,8 @@ a.controller('Bc',
 			ee: data[iter].starttime,
 			ff: data[iter].startdate
 			    });
-		}
+			}
 	    }
+	    console.log(scope.aa);
 	}
 ]);

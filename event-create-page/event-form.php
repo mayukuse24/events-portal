@@ -1,23 +1,67 @@
 <?php
 
-$fpointer = fopen("data.txt","a") or die("File didnt open");
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$eventname = $_POST["event_name"];
 	$organiser =  $_POST["event_organiser"];
+	$contact = $_POST["organiser_contact"];
 	$startdate = $_POST["start_date"];
 	$starttime = $_POST["start_time"];
 	$enddate = $_POST["end_date"];
 	$endtime = $_POST["end_time"];
 	$eventlocation = $_POST["Parent_Location"];
-	$room = $_POST["Child_Location"];
+	
+
+	if(isset($_POST["event_detail"]))
+		$room = $_POST["Child_Location"];
+	else
+		$room = "";
 	
 	if(isset($_POST["event_detail"]))
 		$description = $_POST["event_detail"];
 	else
 		$description = "";
+
 	
-	fwrite($fpointer,"{'eventname':'$eventname','startdate':'$startdate','starttime':'$starttime','endtime':'$endtime', 'enddate':'$enddate','eventlocation':'$eventlocation','room':'$room','organiser':'$organiser','description':'$description'}\n");	
+
+
+	$mysql_host = "localhost";
+	$mysql_user = "root";
+	$mysql_pass = "unknownremo24";
+
+	$mysql_db = 'event_portal';
+
+	$conn = mysql_connect($mysql_host, $mysql_user, $mysql_pass) or die("connection failed");
+
+	$sql = "INSERT INTO event (eventname,organiser,contact,starttime,endtime,eventlocation,room,description) VALUES ('$eventname','$organiser','$contact','$startdate. .$starttime','$enddate. .$endtime','$eventlocation','$room','$description')";
+
+	mysql_select_db($mysql_db);
+
+	$retval = mysql_query( $sql, $conn );
+	if(! $retval )
+	{
+		die('Could not enter data: ' . mysql_error());
+	}
+	
+	echo "Connection to db succesful";
+	echo "Entered data successfully\n";
+
+	$sql2 = "SELECT * FROM event";
+	$retval2 = mysql_query( $sql2, $conn );
+	
+	
+        $str = "[";
+	while($row = mysql_fetch_array($retval2, MYSQL_ASSOC))
+	{
+		$str =  $str.json_encode($row).',';
+	}
+	$str = $str."]";
+
+	//echo $str;
+	$fpointer = fopen("event_data.js",'a') or die("File didnt open");
+	
+	fwrite($fpointer, $str);
 }
    
 ?>

@@ -1,0 +1,11 @@
+function validate()
+{
+    console.log("Hello there");
+
+}
+
+
+
+
+
+window.onload = validate;

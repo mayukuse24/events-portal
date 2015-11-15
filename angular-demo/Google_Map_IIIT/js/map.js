@@ -1,8 +1,27 @@
+
+       function listEventsHere(x){
+      var venue = x;
+      var event_detail = [];
+      var len = data.length;
+      for( var i = 0; i < len; i++ ){
+          if(data[i].eventlocation == venue){
+
+         event_detail.push(data[i].eventname);
+
+         event_detail.push(data[i].starttime);
+          }
+      }
+      return event_detail;
+       }
+
+
 var map;
 var infoWindow;
 var flag;
-// var Nilgiri_list = function call here ()
-var Nilgiri_list = ['Quiz','Debate']
+var Nilgiri_list = listEventsHere("Nilgiri");
+var Himalaya_list = listEventsHere("Himalaya");
+var Felicity_list = listEventsHere("Felicity Ground");
+var Vindhya_list = listEventsHere("Vindhya");
 
 var markersData = [
    {
@@ -14,20 +33,20 @@ var markersData = [
    {
       lat: 17.445649, 
       lng: 78.349117,
-      name: "Himalaya"
-      // data: Himalaya_list
+      name: "Himalaya",
+      data: Himalaya_list
    },
    {
       lat: 17.446057,
       lng: 78.346430,
-      name: "Felicity Ground"
-      // data: Nilgiri_list
+      name: "Felicity Ground",
+      data: Felicity_list
    },
    {
       lat: 17.445840, 
       lng: 78.349268,
-      name: "Vindhya"
-      // data: Nilgiri_list
+      name: "Vindhya",
+      data: Vindhya_list
    } 
 ];
 

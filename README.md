@@ -9,3 +9,5 @@ Just Clone the repository in your server folder
 
 Now visit 'localhost' on your browser to view your local copy of the site.
 
+Actual site at events-portal/angular-demo/Google_Map_IIIT/IIIT_map.html
+
